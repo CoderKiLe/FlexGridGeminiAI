@@ -11,6 +11,8 @@ namespace FlexGridGeminiAI
 {
     public partial class Form1 : Form
     {
+        private readonly IApiKeyService _geminiKeyService = new GeminiApiKeyService();
+        private readonly IApiKeyService _groqKeyService = new GroqApiKeyService();
         #region Fields
 
         private IDataSource _dataSource = new DataSource();
@@ -26,6 +28,9 @@ namespace FlexGridGeminiAI
         {
             InitializeComponent();
             InitializeDashBoard();
+            responseTextBoxC1.TabStop = false; // Prevents the response text box from being focused when the form loads
+
+            this.Shown += Form1_Shown;
         }
 
         #region UI Initialization
@@ -51,8 +56,6 @@ namespace FlexGridGeminiAI
             // Reconnect events after setup
             dataSourceDd.SelectedIndexChanged += dataSourceDd_SelectedIndexChanged;
             dataTableDd.SelectedIndexChanged += dataTableDd_SelectedIndexChanged;
-
-
         }
 
         /// <summary>
@@ -101,6 +104,16 @@ namespace FlexGridGeminiAI
         #endregion
 
         #region Event Handling
+
+        //Check API keys on form load
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            if (!_geminiKeyService.ApiKeyExists() && !_groqKeyService.ApiKeyExists())
+            {
+                MessageBox.Show("Please set at least one API key in the settings.");
+            }
+        }
+
         private async void submitPromptBtn_Click(object sender, EventArgs e)
         {
             await ApplyAIPromptAsync();
@@ -135,7 +148,7 @@ namespace FlexGridGeminiAI
         }
 
         /// <summary>
-        /// Apply gemini promt
+        /// Apply gemini prompt
         /// </summary>
         /// <returns></returns>
         private async Task ApplyAIPromptAsync()
@@ -250,6 +263,43 @@ namespace FlexGridGeminiAI
         private async void sendPictureIcon_Click(object sender, EventArgs e)
         {
             await ApplyAIPromptAsync();
+        }
+
+        #endregion
+
+
+        #region - UX improvement - cursor change on mouse move
+        private void i_Icon_MouseMove(object sender, MouseEventArgs e)
+        {
+            Cursor.Current = Cursors.Hand;
+        }
+
+        private void dataSourceDd_MouseMove(object sender, MouseEventArgs e)
+        {
+            Cursor.Current = Cursors.Hand;
+        }
+
+        private void dataTableDd_MouseMove(object sender, MouseEventArgs e)
+        {
+            Cursor.Current = Cursors.Hand;
+        }
+        private void settingsPictureIcon_MouseMove(object sender, MouseEventArgs e)
+        {
+            Cursor.Current = Cursors.Hand;
+        }
+        private void clearPictureIcon_MouseMove(object sender, MouseEventArgs e)
+        {
+            Cursor.Current = Cursors.Hand;
+        }
+
+        private void aiModelComboBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            Cursor.Current = Cursors.Hand;
+        }
+
+        private void sendPictureIcon_MouseMove(object sender, MouseEventArgs e)
+        {
+            Cursor.Current = Cursors.Hand;
         }
 
         #endregion

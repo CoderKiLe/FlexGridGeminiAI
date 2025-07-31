@@ -20,14 +20,19 @@ namespace FlexGridGeminiAI.Views.Forms
 
             SetTextBoxDisplayGemin();
             SetTextBoxDisplayGroq();
+
+            apiInputTextBox.TextChanged += ApiInputTextBox_TextChanged;
+            groqApiInputTextBox.TextChanged += groqApiInputTextBox_TextChanged;
+
         }
-        
+
         private void SetTextBoxDisplayGemin()
         {
             if (!_geminiKeyService.ApiKeyExists())
             {
                 apiInputTextBox.UseSystemPasswordChar = false;
-                apiInputTextBox.Value = "Enter Your Gemini Key";
+                apiInputTextBox.Placeholder = "Enter Your Gemini Key";
+                c1PictureBox1.Enabled = false;
             }
             else
             {
@@ -38,13 +43,15 @@ namespace FlexGridGeminiAI.Views.Forms
                 return;
             }
         }
-        
+
+
         private void SetTextBoxDisplayGroq()
         {
             if (!_groqKeyService.ApiKeyExists())
             {
                 groqApiInputTextBox.UseSystemPasswordChar = false;
-                groqApiInputTextBox.Value = "Enter Your Groq API key";
+                groqApiInputTextBox.Placeholder = "Enter Your Groq API key";
+                c1PictureBox2.Enabled = false;
             }
             else
             {
@@ -123,6 +130,17 @@ namespace FlexGridGeminiAI.Views.Forms
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        // This event handler is used to enable or disable the eye icon based on the text in apiInputTextBox
+        private void ApiInputTextBox_TextChanged(object sender, EventArgs e)
+        {
+            c1PictureBox1.Enabled = !string.IsNullOrWhiteSpace(apiInputTextBox.Text);
+        }
+
+        private void groqApiInputTextBox_TextChanged(object sender, EventArgs e)
+        {
+            c1PictureBox2.Enabled = !string.IsNullOrWhiteSpace(apiInputTextBox.Text);
         }
     }
 }

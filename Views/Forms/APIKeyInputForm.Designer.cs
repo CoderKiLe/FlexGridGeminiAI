@@ -176,18 +176,19 @@
             // 
             // c1Button1
             // 
-            c1Button1.ButtonType = C1.Win.Input.ButtonType.Subtle;
+            c1Button1.ButtonType = C1.Win.Input.ButtonType.Accent;
             c1Button1.Font = new Font("Segoe UI", 9F);
             c1Button1.Location = new Point(423, 389);
             c1Button1.Name = "c1Button1";
             c1Button1.Size = new Size(75, 37);
+            c1Button1.Styles.Border = new C1.Framework.Thickness(0, 0, 0, 0);
             c1Button1.Styles.Corners = new C1.Framework.Corners(5, 5, 5, 5);
-            c1Button1.Styles.Default.BackColor = Color.DarkGray;
-            c1Button1.Styles.Default.BorderColor = Color.DarkGray;
+            c1Button1.Styles.Default.BackColor = Color.FromArgb(105, 118, 131);
+            c1Button1.Styles.Default.BorderColor = Color.Transparent;
             c1Button1.Styles.Default.ForeColor = Color.White;
             c1Button1.Styles.FocusBorderColor = Color.Transparent;
-            c1Button1.Styles.Hot.BackColor = Color.DimGray;
-            c1Button1.Styles.Hot.BorderColor = Color.DimGray;
+            c1Button1.Styles.Hot.BackColor = Color.FromArgb(96, 107, 119);
+            c1Button1.Styles.Hot.BorderColor = Color.FromArgb(105, 118, 131);
             c1Button1.Styles.HotPressed.BackColor = Color.DimGray;
             c1Button1.Styles.HotPressed.BorderColor = Color.DimGray;
             c1Button1.Styles.Pressed.BackColor = Color.FromArgb(64, 64, 64);

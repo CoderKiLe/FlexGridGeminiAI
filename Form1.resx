@@ -18877,6 +18877,23 @@
         HyQX8v/dkLRcivdL4gfh8fs+5B5b2/9470j/MQRfEDda+xR4/yj6KgTzIR7j8aPmgffoso8NHgEAOw==
 </value>
   </data>
+  <metadata name="toolTip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>133, 17</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="i_Icon.ToolTip" xml:space="preserve">
+    <value>AI-enhanced filtering for C1 FlexGrid using Gemini-based NLP interpretation.
+
+This sample showcases how to integrate AI-powered query interpretation into ComponentOne’s FlexGrid control using Gemini (or other NLP models). 
+It enables users to filter grid data using natural language inputs, which are parsed and translated into valid FilterDefinition XML structures. 
+The result is a more intuitive, dynamic filtering experience that doesn’t require complex user-side logic or strict syntax.
+</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>47</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAMDAAAAEAIACoJQAAFgAAACgAAAAwAAAAYAAAAAEAIAAAAAAAgCUAAAAAAAAAAAAAAAAAAAAA
