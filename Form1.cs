@@ -110,9 +110,10 @@ namespace FlexGridGeminiAI
         {
             if (!_geminiKeyService.ApiKeyExists() && !_groqKeyService.ApiKeyExists())
             {
-                MessageBox.Show("Please set at least one API key in the settings.");
+                settingsPictureIcon_Click(settingsPictureIcon, EventArgs.Empty);
             }
         }
+
 
         private async void submitPromptBtn_Click(object sender, EventArgs e)
         {
