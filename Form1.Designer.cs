@@ -178,7 +178,6 @@
             // 
             responseTextBoxC1.AutoSize = false;
             responseTextBoxC1.Dock = DockStyle.Fill;
-            //responseTextBoxC1.Enabled = false;
             responseTextBoxC1.Location = new Point(0, 0);
             responseTextBoxC1.Multiline = true;
             responseTextBoxC1.Name = "responseTextBoxC1";
@@ -404,9 +403,9 @@
             // 
             // c1PictureBox1
             // 
-            c1PictureBox1.ErrorImage = Properties.Resources.icon;
-            c1PictureBox1.Image = Properties.Resources.icon;
-            c1PictureBox1.InitialImage = Properties.Resources.icon;
+            c1PictureBox1.ErrorImage = Properties.Resources.ai;
+            c1PictureBox1.Image = Properties.Resources.ai;
+            c1PictureBox1.InitialImage = Properties.Resources.ai;
             c1PictureBox1.Location = new Point(20, 19);
             c1PictureBox1.Name = "c1PictureBox1";
             c1PictureBox1.Size = new Size(60, 60);

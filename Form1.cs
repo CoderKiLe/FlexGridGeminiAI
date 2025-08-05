@@ -268,7 +268,6 @@ namespace FlexGridGeminiAI
 
         #endregion
 
-
         #region - UX improvement - cursor change on mouse move
         private void i_Icon_MouseMove(object sender, MouseEventArgs e)
         {

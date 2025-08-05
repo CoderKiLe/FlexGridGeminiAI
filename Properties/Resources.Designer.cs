@@ -63,6 +63,16 @@ namespace FlexGridGeminiAI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ai {
+            get {
+                object obj = ResourceManager.GetObject("ai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ai_icon {
             get {
                 object obj = ResourceManager.GetObject("ai icon", resourceCulture);
