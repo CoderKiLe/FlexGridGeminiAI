@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             bodyNavPanel = new Panel();
             leftBorderPanel = new Panel();
@@ -49,12 +50,15 @@
             c1TextBox1 = new C1.Win.Input.C1TextBox();
             bannerLabel = new C1.Win.Input.C1Label();
             topNavPanel = new Panel();
+            i_Icon = new C1.Win.Input.C1PictureBox();
             dataSourceDd = new ComboBox();
             c1PictureBox1 = new C1.Win.Input.C1PictureBox();
             dataTableDd = new ComboBox();
             c1Label2 = new C1.Win.Input.C1Label();
             c1Label1 = new C1.Win.Input.C1Label();
             bottomBorderPanel = new Panel();
+            toolTip1 = new ToolTip(components);
+            toolTip2 = new ToolTip(components);
             bodyNavPanel.SuspendLayout();
             girdViewPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)flexGridC1).BeginInit();
@@ -73,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)c1TextBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bannerLabel).BeginInit();
             topNavPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)i_Icon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)c1PictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)c1Label2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)c1Label1).BeginInit();
@@ -115,6 +120,8 @@
             // 
             // flexGridC1
             // 
+            flexGridC1.AllowResizing = C1.Win.FlexGrid.AllowResizingEnum.None;
+            flexGridC1.AutoResize = true;
             flexGridC1.BackColor = Color.White;
             flexGridC1.BorderStyle = C1.Win.FlexGrid.Util.BaseControls.BorderStyleEnum.Light3D;
             flexGridC1.ColumnInfo = "10,1,0,0,0,-1,Columns:";
@@ -240,19 +247,21 @@
             // sendPictureIcon
             // 
             sendPictureIcon.BackColor = Color.White;
-            sendPictureIcon.Image = Properties.Resources.paper_plane__1_;
+            sendPictureIcon.Image = Properties.Resources.send;
             sendPictureIcon.InitialImage = Properties.Resources.paper_plane__1_;
-            sendPictureIcon.Location = new Point(316, 210);
+            sendPictureIcon.Location = new Point(316, 206);
             sendPictureIcon.Name = "sendPictureIcon";
-            sendPictureIcon.Size = new Size(44, 31);
+            sendPictureIcon.Size = new Size(44, 37);
             sendPictureIcon.SizeMode = PictureBoxSizeMode.Zoom;
             sendPictureIcon.TabIndex = 17;
             sendPictureIcon.TabStop = false;
+            toolTip2.SetToolTip(sendPictureIcon, "Send");
             sendPictureIcon.Click += sendPictureIcon_Click;
+            sendPictureIcon.MouseMove += sendPictureIcon_MouseMove;
             // 
             // aiModelComboBox
             // 
-            aiModelComboBox.BackColor = Color.White;
+            aiModelComboBox.BackColor = Color.WhiteSmoke;
             aiModelComboBox.FlatStyle = FlatStyle.Flat;
             aiModelComboBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             aiModelComboBox.FormattingEnabled = true;
@@ -260,6 +269,8 @@
             aiModelComboBox.Name = "aiModelComboBox";
             aiModelComboBox.Size = new Size(105, 31);
             aiModelComboBox.TabIndex = 13;
+            toolTip2.SetToolTip(aiModelComboBox, "Choose Ai model");
+            aiModelComboBox.MouseMove += aiModelComboBox_MouseMove;
             // 
             // promptTextBoxC1
             // 
@@ -293,7 +304,9 @@
             clearPictureIcon.SizeMode = PictureBoxSizeMode.Zoom;
             clearPictureIcon.TabIndex = 15;
             clearPictureIcon.TabStop = false;
+            toolTip2.SetToolTip(clearPictureIcon, "Clear/ reset");
             clearPictureIcon.Click += clearPictureIcon_Click;
+            clearPictureIcon.MouseMove += clearPictureIcon_MouseMove;
             // 
             // settingsPictureIcon
             // 
@@ -305,7 +318,9 @@
             settingsPictureIcon.SizeMode = PictureBoxSizeMode.Zoom;
             settingsPictureIcon.TabIndex = 16;
             settingsPictureIcon.TabStop = false;
+            toolTip2.SetToolTip(settingsPictureIcon, "Set your API key from here\r\n");
             settingsPictureIcon.Click += settingsPictureIcon_Click;
+            settingsPictureIcon.MouseMove += settingsPictureIcon_MouseMove;
             // 
             // c1TextBox1
             // 
@@ -346,6 +361,7 @@
             // topNavPanel
             // 
             topNavPanel.BackColor = Color.White;
+            topNavPanel.Controls.Add(i_Icon);
             topNavPanel.Controls.Add(dataSourceDd);
             topNavPanel.Controls.Add(c1PictureBox1);
             topNavPanel.Controls.Add(dataTableDd);
@@ -359,6 +375,18 @@
             topNavPanel.Size = new Size(1644, 100);
             topNavPanel.TabIndex = 2;
             // 
+            // i_Icon
+            // 
+            i_Icon.Image = Properties.Resources.letter_i;
+            i_Icon.Location = new Point(490, 41);
+            i_Icon.Name = "i_Icon";
+            i_Icon.Size = new Size(25, 25);
+            i_Icon.SizeMode = PictureBoxSizeMode.StretchImage;
+            i_Icon.TabIndex = 15;
+            i_Icon.TabStop = false;
+            toolTip1.SetToolTip(i_Icon, resources.GetString("i_Icon.ToolTip"));
+            i_Icon.MouseMove += i_Icon_MouseMove;
+            // 
             // dataSourceDd
             // 
             dataSourceDd.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -371,12 +399,13 @@
             dataSourceDd.Size = new Size(172, 31);
             dataSourceDd.TabIndex = 9;
             dataSourceDd.SelectedIndexChanged += dataSourceDd_SelectedIndexChanged;
+            dataSourceDd.MouseMove += dataSourceDd_MouseMove;
             // 
             // c1PictureBox1
             // 
-            c1PictureBox1.ErrorImage = Properties.Resources.icon;
-            c1PictureBox1.Image = Properties.Resources.icon;
-            c1PictureBox1.InitialImage = Properties.Resources.icon;
+            c1PictureBox1.ErrorImage = Properties.Resources.ai;
+            c1PictureBox1.Image = Properties.Resources.ai;
+            c1PictureBox1.InitialImage = Properties.Resources.ai;
             c1PictureBox1.Location = new Point(20, 19);
             c1PictureBox1.Name = "c1PictureBox1";
             c1PictureBox1.Size = new Size(60, 60);
@@ -396,6 +425,7 @@
             dataTableDd.Size = new Size(212, 31);
             dataTableDd.TabIndex = 8;
             dataTableDd.SelectedIndexChanged += dataTableDd_SelectedIndexChanged;
+            dataTableDd.MouseMove += dataTableDd_MouseMove;
             // 
             // c1Label2
             // 
@@ -430,6 +460,11 @@
             bottomBorderPanel.Size = new Size(1644, 1);
             bottomBorderPanel.TabIndex = 0;
             // 
+            // toolTip1
+            // 
+            toolTip1.ToolTipIcon = ToolTipIcon.Info;
+            toolTip1.ToolTipTitle = "FlexGridGeminiAI";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -440,6 +475,7 @@
             Controls.Add(topNavPanel);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Integration of AI in FilterDefination";
             bodyNavPanel.ResumeLayout(false);
             girdViewPanel.ResumeLayout(false);
@@ -461,6 +497,7 @@
             ((System.ComponentModel.ISupportInitialize)bannerLabel).EndInit();
             topNavPanel.ResumeLayout(false);
             topNavPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)i_Icon).EndInit();
             ((System.ComponentModel.ISupportInitialize)c1PictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)c1Label2).EndInit();
             ((System.ComponentModel.ISupportInitialize)c1Label1).EndInit();
@@ -495,5 +532,8 @@
         private C1.Win.Input.C1PictureBox settingsPictureIcon;
         private C1.Win.Input.C1PictureBox sendPictureIcon;
         private C1.Win.Input.C1PictureBox clearPictureIcon;
+        private C1.Win.Input.C1PictureBox i_Icon;
+        private ToolTip toolTip1;
+        private ToolTip toolTip2;
     }
 }
